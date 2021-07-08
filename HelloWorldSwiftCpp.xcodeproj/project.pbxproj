@@ -13,6 +13,8 @@
 		4F4057DC2696F0C700FAD540 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F4057DB2696F0C700FAD540 /* Preview Assets.xcassets */; };
 		4F4057E72696F0C700FAD540 /* HelloWorldSwiftCppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4057E62696F0C700FAD540 /* HelloWorldSwiftCppTests.swift */; };
 		4F4057F22696F0C700FAD540 /* HelloWorldSwiftCppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4057F12696F0C700FAD540 /* HelloWorldSwiftCppUITests.swift */; };
+		4F4058022696F0F900FAD540 /* HelloWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F4058002696F0F900FAD540 /* HelloWorld.cpp */; };
+		4F4058052696F29600FAD540 /* HelloWorldWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F4058042696F29600FAD540 /* HelloWorldWrapper.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,11 @@
 		4F4057ED2696F0C700FAD540 /* HelloWorldSwiftCppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloWorldSwiftCppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F4057F12696F0C700FAD540 /* HelloWorldSwiftCppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldSwiftCppUITests.swift; sourceTree = "<group>"; };
 		4F4057F32696F0C700FAD540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F4057FF2696F0F800FAD540 /* HelloWorldSwiftCpp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HelloWorldSwiftCpp-Bridging-Header.h"; sourceTree = "<group>"; };
+		4F4058002696F0F900FAD540 /* HelloWorld.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorld.cpp; sourceTree = "<group>"; };
+		4F4058012696F0F900FAD540 /* HelloWorld.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HelloWorld.hpp; sourceTree = "<group>"; };
+		4F4058032696F1C200FAD540 /* HelloWorldWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldWrapper.h; sourceTree = "<group>"; };
+		4F4058042696F29600FAD540 /* HelloWorldWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = HelloWorldWrapper.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +104,14 @@
 			children = (
 				4F4057D42696F0C500FAD540 /* HelloWorldSwiftCppApp.swift */,
 				4F4057D62696F0C500FAD540 /* ContentView.swift */,
+				4F4058002696F0F900FAD540 /* HelloWorld.cpp */,
+				4F4058032696F1C200FAD540 /* HelloWorldWrapper.h */,
+				4F4058042696F29600FAD540 /* HelloWorldWrapper.mm */,
+				4F4058012696F0F900FAD540 /* HelloWorld.hpp */,
 				4F4057D82696F0C700FAD540 /* Assets.xcassets */,
 				4F4057DD2696F0C700FAD540 /* Info.plist */,
 				4F4057DA2696F0C700FAD540 /* Preview Content */,
+				4F4057FF2696F0F800FAD540 /* HelloWorldSwiftCpp-Bridging-Header.h */,
 			);
 			path = HelloWorldSwiftCpp;
 			sourceTree = "<group>";
@@ -197,6 +209,7 @@
 				TargetAttributes = {
 					4F4057D02696F0C500FAD540 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					4F4057E12696F0C700FAD540 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -259,8 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F4058022696F0F900FAD540 /* HelloWorld.cpp in Sources */,
 				4F4057D72696F0C500FAD540 /* ContentView.swift in Sources */,
 				4F4057D52696F0C500FAD540 /* HelloWorldSwiftCppApp.swift in Sources */,
+				4F4058052696F29600FAD540 /* HelloWorldWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HelloWorldSwiftCpp/Preview Content\"";
 				DEVELOPMENT_TEAM = Y9X3GSDXB3;
@@ -429,6 +445,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Imane.HelloWorldSwiftCpp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloWorldSwiftCpp/HelloWorldSwiftCpp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,6 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HelloWorldSwiftCpp/Preview Content\"";
 				DEVELOPMENT_TEAM = Y9X3GSDXB3;
@@ -451,6 +470,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Imane.HelloWorldSwiftCpp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloWorldSwiftCpp/HelloWorldSwiftCpp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
